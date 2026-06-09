@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV Hub</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="CV list">
+      <div class="brand">
+        <span class="brand-mark">CV</span>
+        <div>
+          <h1>CV Hub</h1>
+          <p>HTML/CSS - PDF export</p>
+        </div>
+      </div>
+
+      <button id="newCvButton" class="button secondary full" type="button">Nouveau CV</button>
+
+      <div class="side-title">CV enregistrés</div>
+      <nav id="cvList" class="cv-list" aria-label="Saved CVs"></nav>
+    </aside>
+
+    <main class="workspace">
+      <section class="editor-panel" aria-label="CV editor">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Edition</p>
+            <h2>Contenu du CV</h2>
+          </div>
+          <div class="actions">
+            <button id="saveButton" class="button primary" type="button">Enregistrer</button>
+            <button id="downloadButton" class="button dark" type="button">Download PDF</button>
+            <button id="deleteButton" class="button danger" type="button">Supprimer</button>
+          </div>
+        </div>
+
+        <label class="field">
+          <span>CV title</span>
+          <input id="titleInput" type="text" placeholder="Ex: Data & AI Presales - Alex Martin">
+        </label>
+
+        <div class="two-cols">
+          <label class="field code-field">
+            <span>Content HTML</span>
+            <textarea id="htmlInput" spellcheck="false" placeholder="Colle ici le HTML du CV"></textarea>
+          </label>
+
+          <label class="field code-field">
+            <span>Content CSS</span>
+            <textarea id="cssInput" spellcheck="false" placeholder="Colle ici le CSS du CV"></textarea>
+          </label>
+        </div>
+
+        <div class="upload-box">
+          <div>
+            <p class="upload-title">Photo commune</p>
+            <p class="upload-help">Upload un fichier PNG/JPG/WEBP. Il sera servi comme <code>pp.png</code> pour tous les CV.</p>
+          </div>
+          <form id="ppForm" class="upload-form">
+            <input id="ppInput" type="file" name="pp" accept="image/png,image/jpeg,image/webp">
+            <button class="button secondary" type="submit">Upload pp.png</button>
+          </form>
+        </div>
+
+        <p id="status" class="status" role="status"></p>
+      </section>
+
+      <section class="preview-panel" aria-label="CV preview">
+        <div class="panel-header compact">
+          <div>
+            <p class="eyebrow">Preview</p>
+            <h2 id="previewTitle">Aucun CV sélectionné</h2>
+          </div>
+          <button id="refreshButton" class="button secondary" type="button">Rafraîchir</button>
+        </div>
+        <div class="preview-frame-wrap">
+          <iframe id="previewFrame" title="CV preview"></iframe>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

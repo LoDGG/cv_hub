@@ -1,0 +1,346 @@
+:root {
+  --bg: #eef2f7;
+  --panel: #ffffff;
+  --text: #152033;
+  --muted: #64748b;
+  --line: #d8e0ea;
+  --primary: #0b4f8a;
+  --primary-dark: #07345c;
+  --danger: #b42318;
+  --code-bg: #0f172a;
+  --shadow: 0 16px 42px rgba(15, 23, 42, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+.sidebar {
+  min-height: 100vh;
+  padding: 20px 16px;
+  background: #0f172a;
+  color: #e5edf7;
+  position: sticky;
+  top: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #1d4ed8;
+  color: white;
+  font-weight: 800;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.brand p {
+  margin: 2px 0 0;
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.side-title {
+  margin: 22px 0 8px;
+  color: #94a3b8;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cv-list {
+  display: grid;
+  gap: 8px;
+}
+
+.cv-item {
+  width: 100%;
+  padding: 10px 11px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #e5edf7;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cv-item:hover,
+.cv-item.active {
+  border-color: #60a5fa;
+  background: rgba(37, 99, 235, 0.18);
+}
+
+.cv-item strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.cv-item span {
+  display: block;
+  margin-top: 2px;
+  color: #94a3b8;
+  font-size: 0.75rem;
+}
+
+.workspace {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: minmax(480px, 0.95fr) minmax(500px, 1.05fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.editor-panel,
+.preview-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.editor-panel {
+  padding: 18px;
+}
+
+.preview-panel {
+  padding: 14px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.panel-header.compact {
+  margin-bottom: 10px;
+}
+
+.eyebrow {
+  margin: 0 0 2px;
+  color: var(--primary);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.button {
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.button.full {
+  width: 100%;
+}
+
+.button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.button.dark {
+  background: #111827;
+  color: white;
+}
+
+.button.secondary {
+  background: #e8eef7;
+  color: #172033;
+}
+
+.button.danger {
+  background: #fee4e2;
+  color: var(--danger);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.field span {
+  color: #334155;
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+textarea {
+  min-height: 470px;
+  resize: vertical;
+  width: 100%;
+  border: 1px solid #273449;
+  border-radius: 12px;
+  padding: 12px;
+  background: var(--code-bg);
+  color: #dbeafe;
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.upload-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px dashed #a9b8cb;
+  border-radius: 14px;
+  background: #f8fbff;
+}
+
+.upload-title {
+  margin: 0;
+  font-weight: 800;
+}
+
+.upload-help {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.upload-form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.status {
+  min-height: 20px;
+  margin: 12px 0 0;
+  color: var(--primary-dark);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.preview-frame-wrap {
+  height: calc(100vh - 120px);
+  min-height: 680px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: auto;
+  background: #dbe2ea;
+  padding: 18px;
+}
+
+/* Important: the CV preview is intentionally wider than the right panel.
+   This gives the iframe its own stable desktop/A4 viewport, so the sidebar
+   and editor width cannot trigger the CV responsive CSS or change the PDF layout. */
+#previewFrame {
+  width: 1024px;
+  min-width: 1024px;
+  height: 1448px;
+  display: block;
+  border: 0;
+  background: white;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.22);
+}
+
+@media (max-width: 1200px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    min-height: auto;
+    position: static;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .workspace {
+    padding: 14px;
+  }
+
+  .panel-header,
+  .upload-box {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  textarea {
+    min-height: 300px;
+  }
+}
